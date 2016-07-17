@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.detector.services.LanguageDetectorServiceTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-07-17T01:38:48" hostname="shivanand-PC" time="0.028">
+  <properties/>
+  <testcase name="isIrishNonirishWord" classname="com.detector.services.LanguageDetectorServiceTest" time="0.005"/>
+  <testcase name="detectLanguage" classname="com.detector.services.LanguageDetectorServiceTest" time="0.01"/>
+  <testcase name="isEnglishNonEnglishWord" classname="com.detector.services.LanguageDetectorServiceTest" time="0.001"/>
+  <testcase name="getLinesFromFile" classname="com.detector.services.LanguageDetectorServiceTest" time="0.001"/>
+  <testcase name="isIrish" classname="com.detector.services.LanguageDetectorServiceTest" time="0.001"/>
+  <testcase name="isEnglish" classname="com.detector.services.LanguageDetectorServiceTest" time="0.005"/>
+  <system-out><![CDATA[2016-07-17 11:38:48.215  INFO 5840 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.detector.AbstractTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2016-07-17 11:38:48.219  INFO 5840 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2016-07-17 11:38:48.220  INFO 5840 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttributeSource]
+2016-07-17 11:38:48.220  INFO 5840 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Could not instantiate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]. Specify custom listener classes or make the default listener classes (and their required dependencies) available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+2016-07-17 11:38:48.221  INFO 5840 --- [    Test worker] o.s.t.c.s.DefaultTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@5eab2d87, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@1d9a2c64, org.springframework.test.context.support.DependencyInjectionTestExecutionListener@1df1a9bd, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3d5dc2be]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
