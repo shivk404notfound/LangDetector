@@ -7,6 +7,12 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
@@ -18,6 +24,7 @@ import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.util.FileSystemUtils;
 
 import com.detector.services.LanguageDetectorService;
 
@@ -41,9 +48,15 @@ public class FileUploadControllerTest extends AbstractTest {
 	     Mockito.when(this.langservice.detectLanguage(firstFile)).thenReturn("English");
 	     mockMvc = MockMvcBuilders.standaloneSetup(uploadController).build();  
 	}
+	
+	@After
+    public final void after() throws IOException {
+		 FileSystemUtils.deleteRecursively(new File(FileUploadController.ROOT));
+		 Files.createDirectory(Paths.get(FileUploadController.ROOT));
+	}
 
 	@Test
-	public void handleFileUpload() throws Exception {
+	public void testHandleFileUpload() throws Exception {
 		 mockMvc.perform(MockMvcRequestBuilders.fileUpload("/")
 	                      .file(firstFile)) 
 	                      .andExpect(flash().attributeExists("message"))
@@ -53,7 +66,7 @@ public class FileUploadControllerTest extends AbstractTest {
 	}
 	
 	@Test
-	public void provideUploadInfo() throws Exception {
+	public void testProvideUploadInfo() throws Exception {
 		mockMvc.perform(get("/")) 
                 .andExpect(status().isOk())
                 .andExpect(view().name("uploadForm"))
@@ -63,7 +76,7 @@ public class FileUploadControllerTest extends AbstractTest {
 	}
 	
 	@Test
-	public void getFile() throws Exception {
+	public void testGetFile() throws Exception {
 		mockMvc.perform(get("/filename")) 
                 .andExpect(status().isOk())
                 .andExpect(content().bytes("".getBytes()));            

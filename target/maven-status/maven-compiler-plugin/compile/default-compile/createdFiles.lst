@@ -1,2 +1,3 @@
 com\detector\Application.class
+com\detector\services\LanguageDetectorService.class
 com\detector\FileUploadController.class

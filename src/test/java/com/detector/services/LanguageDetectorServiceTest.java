@@ -15,31 +15,31 @@ public class LanguageDetectorServiceTest extends AbstractTest {
 	LanguageDetectorService langDetector;
 	
 	@Test
-	public void detectLanguage() throws Exception {
+	public void testDetectLanguage() throws Exception {
 		MockMultipartFile firstFile = new MockMultipartFile("file", "filename.txt", "text/plain", "The good guy the the guy".getBytes());
 	    Assert.assertNotNull(langDetector.detectLanguage(firstFile));
 	}
 	
 	@Test
-	public void isEnglish() throws Exception {
+	public void testIsEnglish() throws Exception {
 		String distinctWords[] = {"the","is","are"};
 	    Assert.assertTrue(langDetector.isEnglish(Arrays.asList(distinctWords))); 
 	}
 	
 	@Test
-	public void isEnglishNonEnglishWord() throws Exception {
+	public void testIsEnglishNonEnglishWord() throws Exception {
 		String distinctWords[] = {"namste","mai","hu"};
 	    Assert.assertFalse((langDetector.isEnglish(Arrays.asList(distinctWords)))); 
 	}
 	
 	@Test
-	public void isIrish() throws Exception {
+	public void testIsIrish() throws Exception {
 		String distinctWords[] = {"siad","bi","ta"};
 	    Assert.assertTrue((langDetector.isIrish(Arrays.asList(distinctWords)))); 
 	}
 	
 	@Test
-	public void isIrishNonirishWord() throws Exception {
+	public void testIsIrishNonirishWord() throws Exception {
 		String distinctWords[] = {"hello","how","are"};
 	    Assert.assertFalse((langDetector.isIrish(Arrays.asList(distinctWords)))); 
 	}

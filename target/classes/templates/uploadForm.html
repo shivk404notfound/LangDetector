@@ -1,5 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <body>
+<div  margin-top="30%" align="center">
+
 
 	<div th:if="${message}">
 		<h2 th:text="${message}"/>
@@ -14,13 +16,19 @@
 		</form>
 	</div>
 
-	<div>
-		<ul>
+	<div >
+		<ul style="list-style-type:none" >
 			<li th:each="file : ${files}">
 				<a th:href="${file.href}" th:text="${file.rel}" />
 			</li>
 		</ul>
 	</div>
-
+	
+	<div align ="center" margin-top ="10px">
+	 <p>Please upload .txt file, Current max file size is : 128KB<br> 
+	 Currently English and Irish(partial) language detection is in place</br> </p>
+	</div>
+	
+</div>
 </body>
 </html>

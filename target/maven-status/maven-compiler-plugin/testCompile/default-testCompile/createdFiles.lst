@@ -1,1 +1,3 @@
+com\detector\FileUploadControllerTest.class
 com\detector\AbstractTest.class
+com\detector\services\LanguageDetectorServiceTest.class
